@@ -116,7 +116,7 @@ $(document).ready(function(){
         trivia.result = false;
         clearInterval(trivia.timerId);
         resultId = setTimeout(trivia.guessResult, 1000);
-        $('#results').html('<h3>Out of time! The answer was '+ Object.values(trivia.answers)[trivia.currentSet] +'</h3>');
+        $('#results').html('<h3>Times up! The correct answer was '+ Object.values(trivia.answers)[trivia.currentSet] +'</h3>');
       }
       // if all the questions have been shown end the game, show results
       else if(trivia.currentSet === Object.keys(trivia.questions).length){
@@ -129,7 +129,7 @@ $(document).ready(function(){
           '<p>Unanswered: '+ trivia.unanswered +'</p>'+
           '<p>Press start to play again!</p>');
         
-        // hide game sction
+        // hide game section
         $('#game').hide();
         
         // show start button to begin a new game
@@ -158,7 +158,7 @@ $(document).ready(function(){
       }
       // else the user picked the wrong option, increment incorrect
       else{
-        // turn button clicked red for incorrect
+        // turn button red for incorrect
         $(this).addClass('btn-danger').removeClass('btn-info');
         
         trivia.incorrect++;
@@ -168,7 +168,7 @@ $(document).ready(function(){
       }
       
     },
-    // method to remove previous question results and options
+    // to remove previous question results and options
     guessResult : function(){
       
       // increment to next question set
