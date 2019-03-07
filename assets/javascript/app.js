@@ -122,7 +122,7 @@ $(document).ready(function(){
         trivia.unanswered++;
         trivia.result = false;
         clearInterval(trivia.timerId);
-        resultId = setTimeout(trivia.guessResult, 1300);
+        resultId = setTimeout(trivia.guessResult, 1000);
         $('#results').html('<h3>Times up! The correct answer was '+ Object.values(trivia.answers)[trivia.currentSet] +'</h3>');
       }
 
@@ -132,7 +132,7 @@ $(document).ready(function(){
         
         // adds results of game (correct, incorrect, unanswered) to the page
         $('#results')
-          .html('<h3>Great game!</h3>'+
+          .html('<h3 id="greatGame">Great game!</h3>'+
           '<p>Correct: '+ trivia.correct +'</p>'+
           '<p>Incorrect: '+ trivia.incorrect +'</p>'+
           '<p>Unanswered: '+ trivia.unanswered +'</p>'+

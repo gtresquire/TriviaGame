@@ -1,24 +1,36 @@
+.jumbotron { min-height: 550px;  margin-top: 4rem; margin-left: 125px; margin-right: 125px;
+    background-color: rgb(208, 249, 252);
+    border-radius: 25px;
+    }
+      
 
-    .jumbotron { min-height: 550px; margin-top: 2.5rem; }
+html body { background-image:url("https://gurufocus.s3.amazonaws.com/photos/others/Microchip.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+} 
+
+p {font-size: 1.3rem;}
+
+#greatGame {font-size: 2rem; margin-top: -25px; margin-bottom: 20px; }  /*Great game /*
 /* 
       .container  {
         background-image: chipimg.jpeg;
         background-size: cover;
         background-repeat: no-repeat;
-    } */
+ } */
 
-    #question {margin-bottom: 1.5rem; }
+#question {margin-bottom: 1.5rem; }
     
     
     /* .text-center { float:left 50%; float:right 50%; padding: 5px; margin-right: 5px;
     } */
 
-    .option btn btn-info btn-lg {padding: 1.2rem; }
+.option btn btn-info btn-lg {padding: 1.2rem; }
 
-     .row { justify-content:center; margin: 1.5rem; }
+.row { justify-content:center; margin: 1.5rem; }
 
-    #options {margin-right: 1.5rem;} */
+#options {margin-right: 1.5rem;} */
 
-    h3{padding: 1.2rem; }
+h3{padding: 1.2rem; }
 
-    #results{ font-size: 1.2rem;}
+#results{ font-size: 1.3rem;}
