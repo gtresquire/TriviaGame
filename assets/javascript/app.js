@@ -18,16 +18,18 @@ $(document).ready(function(){
     timer: 20,
     timerOn: false,
     timerId : '',
+
     // questions options and answers data
     questions: {
       q1: 'What was the name of the first computer?',
       q2: 'Who invented the Analytical Engine?',
       q3: 'What numeral system is based on 16?',
       q4: 'What material is the flat piece of a microchip made of?',
-      q5: "What percent of the world's currency reside on computers?",
+      q5: "What percent of the world's currency resides on computers?",
       q6: 'Doug Engelbart invented the computer mouse in what year?',
       q7: "The first hard disk drive had how much storage capacity?"
     },
+
     options: {
       q1: ['Big Blue', 'HAL1000', 'ENIAC', 'Commodore 64'],
       q2: ['Leonardo da Vinci', 'Leonard Nimoy', 'Thomas Edison', 'Charles Babbage'],
@@ -35,8 +37,9 @@ $(document).ready(function(){
       q4: ['Polyethylene', 'Silicate', 'Silicon', 'Glass'],
       q5: ['30%','75%','50%','90%'],
       q6: ['1964','1985','1976','1950'],
-      q7: ['5MB', '500MB', '1GB','100bytes']
+      q7: ['5MB', '500MB', '1GB','100 bytes']
     },
+
     answers: {
       q1: 'ENIAC',
       q2: 'Charles Babbage',
@@ -46,8 +49,10 @@ $(document).ready(function(){
       q6: '1964',
       q7: '5MB',
     },
-    // trivia methods
-    // method to initialize game
+
+
+    // beginning settings for trivia
+    // initialize game
     startGame: function(){
       // restarting game results
       trivia.currentSet = 0;
@@ -59,18 +64,18 @@ $(document).ready(function(){
       // show game section
       $('#game').show();
       
-      //  empty last results
+      //  empty prior results
       $('#results').html('');
-      
-      // show timer
+
+      // show the timer
       $('#timer').text(trivia.timer);
       
-      // remove start button
+      // remove the start button
       $('#start').hide();
   
       $('#remaining-time').show();
       
-      // ask first question
+      // first question asked
       trivia.nextQuestion();
       
     },
@@ -110,14 +115,18 @@ $(document).ready(function(){
             $('#timer').addClass('last-seconds');
           }
       }
+
+
       // the time has run out and increment unanswered, run result
       else if(trivia.timer === -1){
         trivia.unanswered++;
         trivia.result = false;
         clearInterval(trivia.timerId);
-        resultId = setTimeout(trivia.guessResult, 1000);
+        resultId = setTimeout(trivia.guessResult, 1300);
         $('#results').html('<h3>Times up! The correct answer was '+ Object.values(trivia.answers)[trivia.currentSet] +'</h3>');
       }
+
+
       // if all the questions have been shown end the game, show results
       else if(trivia.currentSet === Object.keys(trivia.questions).length){
         
@@ -164,7 +173,7 @@ $(document).ready(function(){
         trivia.incorrect++;
         clearInterval(trivia.timerId);
         resultId = setTimeout(trivia.guessResult, 1000);
-        $('#results').html('<h3>Better luck next time! '+ currentAnswer +'</h3>');
+        $('#results').html('<h3>Incorrect!'+ '    ' + currentAnswer +'</h3>');
       }
       
     },
